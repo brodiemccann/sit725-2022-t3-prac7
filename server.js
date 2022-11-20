@@ -19,6 +19,13 @@ app.get("/addTwoNumbers", (req,res) => {
     res.json({statusCode: 200, data: result, message:'Success'})
 })
 
+app.post("/addTwoNumbers",(req,res) => {
+    var number1 = req.body.number1;
+    var number2 = req.body.number2;
+    var result = addNumbers(number1,number2)
+    res.json({statusCode: 200, data: result, message:"Success"})
+})
+
 var port = process.env.port || 3000;
 app.listen(port,()=>{
     console.log("App listening to http://localhost:"+port)
