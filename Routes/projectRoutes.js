@@ -1,8 +1,8 @@
 var express = require("express")
 var router = express.Router();
-let client = require("../dbConnect");
+//let client = require("../dbConnect");
 let projectCollection;
-let projectController = require('../controller');
+let controller = require('../controller');
 
 //add post api
 router.post('/', (req, res) => {

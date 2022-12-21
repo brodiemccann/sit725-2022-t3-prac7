@@ -1,8 +1,5 @@
 let projectContoller = require('../models/project')
 // let client = require("../dbConnect");
-
-// let projectCollection;
-
 // setTimeout(() => {
 //     projectCollection = client.mongoClient.db().collection("Project");
 // }, 2000);
@@ -31,7 +28,6 @@ const createProjects = (req, res) => {
 }
 
 // retrieve project 
-
 const retrieveProjects = (req, res) => {
     projectModel.getProjects((err, result) => {
         if (err) {
