@@ -1,13 +1,11 @@
 require('dotenv').config()
-//mongoDB connection
 const MongoClient = require('mongodb').MongoClient;
 
-// add database connections
 const uri = 'mongodb+srv://mccannbr:Gordon.95@cluster0.xlkct3q.mongodb.net/?retryWrites=true&w=majority'
-const client = new MongoClient(uri, { useNewUrlParser: true })
+const client = new MongoClient(uri, {useNewUrlParser: true})
 
-client.connect((err, db) => {
-    if (!err) {
+client.connect((err,db) => {
+    if(!err) {
         console.log('MongoDB Connected')
     }
     else {
@@ -16,4 +14,4 @@ client.connect((err, db) => {
     }
 })
 
-module.MongoClient = client;
+module.exports = client; 

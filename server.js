@@ -1,8 +1,9 @@
 var express = require("express")
 var app = express()
-var cors = require('cors') 
-let dbConnect = require("./dbConnect");
+var cors = require('cors')
+let dbConnect = require("./dbConnect"); 
 let projectRoutes = require("./routes/projectRoutes"); 
+// let projectCollection; 
 
 app.use(express.static(__dirname+'/public'))
 app.use(express.json());
@@ -10,10 +11,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors())
 app.use('/api/projects', projectRoutes)
 
-//mongoDb connection...
+// //mongoDb connection...
 // const MongoClient = require('mongodb').MongoClient; 
 // const uri = 'mongodb+srv://abatool:amna@cluster0.xnvxmni.mongodb.net/?retryWrites=true&w=majority'
 // const client = new MongoClient(uri, {useNewUrlParser: true})
+
 
 // const createCollection = (collectionName) => {
 //     client.connect((err,db) => {
@@ -28,7 +30,7 @@ app.use('/api/projects', projectRoutes)
 //     })
 // }
 
-//insert project....
+// //insert project....
 // const insertProjects = (project,callback) => {
 //     projectCollection.insert(project,callback);
 // }

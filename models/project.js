@@ -1,19 +1,19 @@
-let client = require("../dbConnect");
-let projectCollection;
+let client = require("../dbConnect"); 
+let projectCollection; 
 
 setTimeout(() => {
-    projectCollection = client.mongoClient.db().collection("Wildlife");
-}, 2000);
+    projectCollection = client.db().collection("Australian Wildlife");
+}, 2000)
 
 
-const insertProjects = (project, callback) => {
-    projectCollection.insert(project, callback);
+//insert project....
+const insertProjects = (project,callback) => {
+    projectCollection.insert(project,callback);
 }
 
+// get project...
 const getProjects = (callback) => {
     projectCollection.find({}).toArray(callback);
 }
 
-module.exports = {
-    insertProjects, getProjects
-}
+module.exports = {insertProjects, getProjects}
